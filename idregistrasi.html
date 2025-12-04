@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi - GUNSAK DU TRAIL ULTRA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (sama seperti di index.html) -->
+    <header class="trail-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://drive.google.com/uc?export=view&id=1wnrNDMCebkz5nwaH5choZwbLctaxvNVh" alt="Gunsak Du Trail Ultra Logo" class="logo-img">
+                    <span class="brand-text">GUNSAK DU TRAIL ULTRA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Event</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kategori.html">Kategori Lomba</a></li>
+                        <li class="nav-item"><a class="nav-link" href="jadwal.html">Jadwal & Lokasi</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="registrasi.html">Registrasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle language-switcher" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-globe"></i> ID
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../id/index.html"><img src="https://flagcdn.com/w20/id.png" alt="Indonesia" class="flag-icon"> Bahasa Indonesia</a></li>
+                                <li><a class="dropdown-item" href="../en/index.html"><img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon"> English</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="registration-section" style="padding-top: 120px; padding-bottom: 80px; min-height: 100vh;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-header text-center mb-5">
+                        <h1 class="section-title">Formulir Registrasi</h1>
+                        <p class="section-subtitle">Daftar sekarang dan jadilah bagian dari petualangan GUNSAK DU TRAIL ULTRA 2026</p>
+                        <div class="alert alert-info" role="alert">
+                            <i class="fas fa-info-circle"></i> Setelah mengisi formulir ini, data Anda akan otomatis terkirim ke email panitia.
+                        </div>
+                    </div>
+                    
+                    <form id="registrationForm" class="registration-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+                        <div class="form-card">
+                            <h3><i class="fas fa-user"></i> Data Pribadi</h3>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="fullName" class="form-label">Nama Lengkap <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                </div>
+                                
+                                <div class="col-md-3 mb-3">
+                                    <label for="age" class="form-label">Umur <span class="required">*</span></label>
+                                    <input type="number" class="form-control" id="age" name="age" min="10" max="80" required>
+                                </div>
+                                
+                                <div class="col-md-3 mb-3">
+                                    <label for="gender" class="form-label">Jenis Kelamin <span class="required">*</span></label>
+                                    <select class="form-select" id="gender" name="gender" required>
+                                        <option value="">Pilih...</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="country" class="form-label">Negara Asal <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="country" name="country" required>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="whatsapp" class="form-label">Nomor WhatsApp <span class="required">*</span></label>
+                                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" required>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="community" class="form-label">Nama Komunitas (Opsional)</label>
+                                    <input type="text" class="form-control" id="community" name="community">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-card">
+                            <h3><i class="fas fa-flag-checkered"></i> Kategori Lomba</h3>
+                            
+                            <div class="category-options">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="category-option">
+                                            <input type="radio" id="category7k" name="category" value="7K - FUN TRAIL" class="form-check-input" required>
+                                            <label for="category7k" class="form-check-label">
+                                                <h4>7K – FUN TRAIL</h4>
+                                                <p>Cocok untuk pemula. Jalur fun, aman, dan ramah untuk komunitas & keluarga. Terbuka untuk segala usia.</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="category-option">
+                                            <input type="radio" id="category18k" name="category" value="18K - TRAIL MIX ROAD" class="form-check-input" required>
+                                            <label for="category18k" class="form-check-label">
+                                                <h4>18K – TRAIL MIX ROAD</h4>
+                                                <p>Perpaduan trail teknis & jalur aspal. Cocok untuk pelari menengah. Memiliki tanjakan dan jalur vegetasi tertutup.</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="category-option">
+                                            <input type="radio" id="category50k" name="category" value="50K - ULTRA TRAIL" class="form-check-input" required>
+                                            <label for="category50k" class="form-check-label">
+                                                <h4>50K – ULTRA TRAIL</h4>
+                                                <p>Kategori utama. Rute ultra dengan elevasi signifikan. Untuk pelari berpengalaman yang siap menghadapi tantangan berat.</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-card">
+                            <h3><i class="fas fa-id-card"></i> Identitas & Kontak Darurat</h3>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="identity" class="form-label">Upload Identitas (KTP / Passport / SIM / Kartu Pelajar) <span class="required">*</span></label>
+                                    <input type="file" class="form-control" id="identity" name="identity" accept=".jpg,.jpeg,.png,.pdf" required>
+                                    <small class="form-text">Format: JPG, PNG, atau PDF. Maksimal 5MB.</small>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="emergencyName" class="form-label">Nama Kontak Darurat <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="emergencyName" name="emergencyName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="emergencyPhone" class="form-label">Nomor Telepon Darurat <span class="required">*</span></label>
+                                    <input type="tel" class="form-control" id="emergencyPhone" name="emergencyPhone" required>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="emergencyRelation" class="form-label">Hubungan dengan Kontak Darurat <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="emergencyRelation" name="emergencyRelation" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-card">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Saya menyetujui Syarat & Ketentuan dan menyatakan bahwa informasi yang saya berikan adalah benar.
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="health" name="health" required>
+                                <label class="form-check-label" for="health">
+                                    Saya menyatakan bahwa saya dalam kondisi kesehatan yang baik dan siap secara fisik untuk mengikuti event ini.
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-accent btn-lg">
+                                <i class="fas fa-paper-plane"></i> Kirim Formulir Pendaftaran
+                            </button>
+                            <p class="mt-3 text-muted">Formulir akan dikirim ke: gunsakdutrailultra@gmail.com</p>
+                        </div>
+                    </form>
+                    
+                    <div id="formSuccess" class="alert alert-success mt-4" role="alert" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Terima kasih! Pendaftaran Anda telah berhasil dikirim. Tim kami akan menghubungi Anda melalui email atau WhatsApp.
+                    </div>
+                    
+                    <div id="formError" class="alert alert-danger mt-4" role="alert" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i> Terjadi kesalahan saat mengirim formulir. Silakan coba lagi atau hubungi kami melalui WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (sama seperti di index.html) -->
+    <footer class="trail-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-logo">
+                        <img src="https://drive.google.com/uc?export=view&id=1wnrNDMCebkz5nwaH5choZwbLctaxvNVh" alt="Logo" class="footer-logo-img">
+                        <h4>GUNSAK DU TRAIL ULTRA</h4>
+                        <p>Event Lari Trail Lombok</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Event</a></li>
+                        <li><a href="kategori.html">Kategori Lomba</a></li>
+                        <li><a href="jadwal.html">Jadwal & Lokasi</a></li>
+                        <li><a href="registrasi.html">Registrasi</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Kontak</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> gunsakdutrailultra@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> 085804231555</li>
+                        <li><i class="fab fa-instagram"></i> @gunsakultra</li>
+                    </ul>
+                    <div class="footer-hashtag">#GUNSAKDUTRAILULTRA</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GUNSAK DU TRAIL ULTRA. Hak Cipta Dilindungi. Diselenggarakan oleh Gunsak Academia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk form handling -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulasi pengiriman form (ganti dengan kode Formspree/Getform yang sebenarnya)
+            const form = this;
+            const formData = new FormData(form);
+            
+            // Tampilkan loading
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            submitBtn.disabled = true;
+            
+            // Ganti URL ini dengan endpoint Formspree/Getform Anda
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Tampilkan pesan sukses
+                    document.getElementById('formSuccess').style.display = 'block';
+                    document.getElementById('formError').style.display = 'none';
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                // Tampilkan pesan error
+                document.getElementById('formError').style.display = 'block';
+                document.getElementById('formSuccess').style.display = 'none';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Kembalikan tombol ke keadaan semula
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // Styling tambahan untuk form
+        const style = document.createElement('style');
+        style.textContent = `
+            .registration-form .form-card {
+                background-color: rgba(0,0,0,0.3);
+                border-radius: 10px;
+                padding: 30px;
+                margin-bottom: 30px;
+                border-left: 5px solid var(--accent-brown);
+            }
+            
+            .registration-form .form-label {
+                color: white;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+            
+            .registration-form .form-control, 
+            .registration-form .form-select {
+                background-color: rgba(255,255,255,0.1);
+                border: 1px solid rgba(255,255,255,0.2);
+                color: white;
+                padding: 12px 15px;
+            }
+            
+            .registration-form .form-control:focus, 
+            .registration-form .form-select:focus {
+                background-color: rgba(255,255,255,0.15);
+                border-color: var(--accent-light);
+                color: white;
+                box-shadow: 0 0 0 0.25rem rgba(139, 69, 19, 0.25);
+            }
+            
+            .required {
+                color: #ff6b6b;
+            }
+            
+            .category-option {
+                background-color: rgba(255,255,255,0.05);
+                border-radius: 8px;
+                padding: 20px;
+                height: 100%;
+                border: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+            
+            .category-option:hover {
+                background-color: rgba(139, 69, 19, 0.1);
+                border-color: rgba(139, 69, 19, 0.5);
+            }
+            
+            .category-option input[type="radio"]:checked + label h4 {
+                color: var(--accent-light);
+            }
+            
+            .category-option label {
+                cursor: pointer;
+                width: 100%;
+            }
+            
+            .category-option h4 {
+                color: white;
+                margin-bottom: 10px;
+            }
+            
+            .category-option p {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                margin-bottom: 0;
+            }
+            
+            .section-title {
+                color: white;
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .section-subtitle {
+                color: var(--accent-light);
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
