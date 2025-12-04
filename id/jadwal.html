@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal & Lokasi - GUNSAK DU TRAIL ULTRA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="trail-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://drive.google.com/uc?export=view&id=1wnrNDMCebkz5nwaH5choZwbLctaxvNVh" alt="Gunsak Du Trail Ultra Logo" class="logo-img">
+                    <span class="brand-text">GUNSAK DU TRAIL ULTRA</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Event</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kategori.html">Kategori Lomba</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="jadwal.html">Jadwal & Lokasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registrasi.html">Registrasi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle language-switcher" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-globe"></i> ID
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../id/index.html"><img src="https://flagcdn.com/w20/id.png" alt="Indonesia" class="flag-icon"> Bahasa Indonesia</a></li>
+                                <li><a class="dropdown-item" href="../en/index.html"><img src="https://flagcdn.com/w20/gb.png" alt="English" class="flag-icon"> English</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background: linear-gradient(rgba(11, 61, 46, 0.85), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; padding: 140px 0 80px; margin-top: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h1 class="page-title">Jadwal & Lokasi</h1>
+                    <p class="page-subtitle">Informasi waktu dan tempat pelaksanaan GUNSAK DU TRAIL ULTRA 2026</p>
+                    <div class="hashtag">#GUNSAKDUTRAILULTRA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section py-5" style="background-color: var(--primary-green);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Important Notice -->
+                    <div class="alert alert-warning" role="alert" style="background-color: rgba(255,193,7,0.1); border: 1px solid rgba(255,193,7,0.3); color: #ffd700; border-radius: 10px; padding: 20px; margin-bottom: 40px;">
+                        <h4 style="color: #ffd700; margin-bottom: 10px;"><i class="fas fa-exclamation-triangle"></i> Informasi Penting</h4>
+                        <p style="margin-bottom: 0; font-size: 1.1rem;">
+                            <strong>Jadwal lengkap dan lokasi start/finish akan diumumkan melalui Instagram resmi: 
+                            <a href="https://instagram.com/gunsakultra" target="_blank" style="color: #ffd700; text-decoration: underline;">@gunsakultra</a></strong>
+                        </p>
+                        <p style="margin-top: 10px; margin-bottom: 0; font-size: 1rem;">
+                            The full schedule and start/finish location will be announced through our official Instagram: 
+                            <a href="https://instagram.com/gunsakultra" target="_blank" style="color: #ffd700; text-decoration: underline;">@gunsakultra</a>
+                        </p>
+                    </div>
+
+                    <!-- Event Date -->
+                    <div class="event-date-card text-center mb-5">
+                        <div class="card" style="background-color: rgba(0,0,0,0.3); border: 2px solid var(--accent-brown); border-radius: 15px; overflow: hidden;">
+                            <div class="card-header" style="background-color: rgba(139, 69, 19, 0.2); border-bottom: 1px solid rgba(139, 69, 19, 0.3); padding: 20px;">
+                                <h3 style="color: var(--accent-light); margin: 0;"><i class="fas fa-calendar-star"></i> Tanggal Pelaksanaan Event</h3>
+                            </div>
+                            <div class="card-body" style="padding: 40px;">
+                                <div class="date-display" style="font-size: 4rem; font-weight: 900; color: var(--accent-light); line-height: 1; margin-bottom: 20px;">
+                                    OKTOBER 2026
+                                </div>
+                                <p style="color: #f0f0f0; font-size: 1.2rem; margin-bottom: 30px;">
+                                    Event akan dilaksanakan pada Bulan Oktober 2026 di area Gunung Sasak, Lombok.
+                                </p>
+                                <div class="countdown-container">
+                                    <h4 style="color: white; margin-bottom: 20px;">Hitung Mundur Menuju Event</h4>
+                                    <div id="countdown" class="countdown-timer">
+                                        <!-- Countdown akan diisi oleh JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tentative Schedule -->
+                    <div class="tentative-schedule mb-5">
+                        <h2 style="color: white; text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--accent-brown); padding-bottom: 15px;">Jadwal Sementara (Tentative)</h2>
+                        
+                        <div class="schedule-timeline">
+                            <!-- Day 1 -->
+                            <div class="timeline-day mb-4">
+                                <div class="day-header" style="background-color: rgba(139, 69, 19, 0.3); padding: 15px 20px; border-radius: 10px 10px 0 0; border-left: 5px solid var(--accent-brown);">
+                                    <h3 style="color: var(--accent-light); margin: 0;"><i class="fas fa-calendar-day"></i> Hari 1: Technical Meeting & Race Pack Pickup</h3>
+                                </div>
+                                <div class="day-schedule" style="background-color: rgba(0,0,0,0.2); padding: 20px; border-radius: 0 0 10px 10px;">
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            09:00 - 17:00
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Pengambilan Race Pack</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Pengambilan race pack (bib number, timing chip, goodie bag) untuk semua kategori.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            18:00 - 19:00
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Technical Meeting 50K Ultra</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Briefing teknis untuk peserta kategori 50K Ultra Trail.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start;">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            19:00 - 20:00
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Technical Meeting 7K & 18K</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Briefing teknis untuk peserta kategori 7K Fun Trail dan 18K Trail Mix.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 2 -->
+                            <div class="timeline-day">
+                                <div class="day-header" style="background-color: rgba(139, 69, 19, 0.3); padding: 15px 20px; border-radius: 10px 10px 0 0; border-left: 5px solid var(--accent-brown);">
+                                    <h3 style="color: var(--accent-light); margin: 0;"><i class="fas fa-running"></i> Hari 2: Race Day</h3>
+                                </div>
+                                <div class="day-schedule" style="background-color: rgba(0,0,0,0.2); padding: 20px; border-radius: 0 0 10px 10px;">
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            04:00 - 05:00
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Registrasi Ulang 50K Ultra</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Check-in dan registrasi ulang untuk peserta 50K Ultra Trail.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            05:00
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Start 50K Ultra Trail</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Pelepasan peserta kategori 50K Ultra Trail.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            06:30 - 07:30
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Registrasi Ulang 18K Trail Mix</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Check-in dan registrasi ulang untuk peserta 18K Trail Mix.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            07:30
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Start 18K Trail Mix</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Pelepasan peserta kategori 18K Trail Mix.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            08:30 - 09:30
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Registrasi Ulang 7K Fun Trail</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Check-in dan registrasi ulang untuk peserta 7K Fun Trail.</p>
+                                        </div>
+                                    </div>
+                                    <div class="schedule-item" style="display: flex; align-items: flex-start;">
+                                        <div class="schedule-time" style="min-width: 100px; color: var(--accent-light); font-weight: 700; font-size: 1.1rem;">
+                                            09:30
+                                        </div>
+                                        <div class="schedule-details" style="flex: 1;">
+                                            <h5 style="color: white; margin-bottom: 5px;">Start 7K Fun Trail</h5>
+                                            <p style="color: #d0d0d0; margin: 0;">Pelepasan peserta kategori 7K Fun Trail.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="note-box mt-4" style="background-color: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-light);">
+                            <p style="color: #f0f0f0; margin: 0; font-style: italic;">
+                                <i class="fas fa-info-circle" style="color: var(--accent-light); margin-right: 10px;"></i>
+                                <strong>Catatan:</strong> Jadwal di atas adalah jadwal sementara dan dapat berubah. Jadwal akhir akan diumumkan melalui Instagram resmi <a href="https://instagram.com/gunsakultra" target="_blank" style="color: var(--accent-light);">@gunsakultra</a> mendekati hari pelaksanaan event.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Location Information -->
+                    <div class="location-info mb-5">
+                        <h2 style="color: white; text-align: center; margin-bottom: 30px; border-bottom: 2px solid var(--accent-brown); padding-bottom: 15px;">Lokasi Event</h2>
+                        
+                        <div class="row">
+                            <div class="col-lg-6 mb-4">
+                                <div class="location-card" style="background-color: rgba(0,0,0,0.3); border-radius: 10px; padding: 25px; height: 100%; border: 1px solid rgba(139, 69, 19, 0.3);">
+                                    <h3 style="color: var(--accent-light); margin-bottom: 20px;"><i class="fas fa-map-marker-alt"></i> Gunung Sasak, Lombok</h3>
+                                    <p style="color: #f0f0f0; line-height: 1.7; margin-bottom: 20px;">
+                                        Event akan dilaksanakan di area <strong>Gunung Sasak, Lombok</strong>. Lokasi tepat start/finish akan diumumkan kemudian melalui Instagram resmi.
+                                    </p>
+                                    <div class="location-features">
+                                        <h5 style="color: white; margin-bottom: 15px;">Akses ke Lokasi:</h5>
+                                        <ul style="color: #f0f0f0; padding-left: 20px;">
+                                            <li><strong>Dari Bandara Internasional Lombok:</strong> ± 1.5 jam perjalanan</li>
+                                            <li><strong>Dari Kota Mataram:</strong> ± 1 jam perjalanan</li>
+                                            <li><strong>Transportasi:</strong> Disarankan menggunakan kendaraan pribadi atau sewa mobil</li>
+                                            <li><strong>Parkir:</strong> Area parkir yang luas akan disediakan di lokasi event</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 mb-4">
+                                <div class="location-card" style="background-color: rgba(0,0,0,0.3); border-radius: 10px; padding: 25px; height: 100%; border: 1px solid rgba(139, 69, 19, 0.3);">
+                                    <h3 style="color: var(--accent-light); margin-bottom: 20px;"><i class="fas fa-hotel"></i> Akomodasi & Logistik</h3>
+                                    <p style="color: #f0f0f0; line-height: 1.7; margin-bottom: 20px;">
+                                        Rekomendasi akomodasi dan informasi logistik akan diumumkan mendekati event. Panitia akan bekerja sama dengan hotel-hotel sekitar untuk menawarkan harga khusus untuk peserta.
+                                    </p>
+                                    <div class="accommodation-features">
+                                        <h5 style="color: white; margin-bottom: 15px;">Yang Akan Disediakan:</h5>
+                                        <ul style="color: #f0f0f0; padding-left: 20px;">
+                                            <li>Daftar hotel dengan harga khusus peserta</li>
+                                            <li>Informasi transportasi dari hotel ke lokasi start</li>
+                                            <li>Rekomendasi tempat makan sekitar lokasi</li>
+                                            <li>Informasi fasilitas medis terdekat</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Placeholder -->
+                        <div class="map-container mb-4">
+                            <div class="card" style="background-color: rgba(0,0,0,0.3); border: 1px solid rgba(139, 69, 19, 0.3);">
+                                <div class="card-header" style="background-color: rgba(139, 69, 19, 0.2); border-bottom: 1px solid rgba(139, 69, 19, 0.3);">
+                                    <h4 style="color: var(--accent-light); margin: 0;"><i class="fas fa-map"></i> Peta Area Gunung Sasak</h4>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="map" style="height: 400px; width: 100%; border-radius: 0 0 8px 8px; overflow: hidden;">
+                                        <!-- Map akan diinisialisasi oleh JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Updates -->
+                    <div class="instagram-updates">
+                        <div class="card" style="background-color: rgba(0,0,0,0.3); border: 2px solid rgba(225, 48, 108, 0.3); border-radius: 10px; overflow: hidden;">
+                            <div class="card-header" style="background-color: rgba(225, 48, 108, 0.2); border-bottom: 1px solid rgba(225, 48, 108, 0.3); padding: 20px;">
+                                <h3 style="color: #e1306c; margin: 0; text-align: center;">
+                                    <i class="fab fa-instagram"></i> Ikuti Update Terbaru di Instagram
+                                </h3>
+                            </div>
+                            <div class="card-body" style="padding: 30px;">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4 text-center mb-3 mb-md-0">
+                                        <div class="instagram-icon" style="font-size: 5rem; color: #e1306c;">
+                                            <i class="fab fa-instagram"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h4 style="color: white; margin-bottom: 15px;">@gunsakultra</h4>
+                                        <p style="color: #f0f0f0; margin-bottom: 20px;">
+                                            Semua informasi resmi mengenai jadwal, lokasi start/finish, perubahan terakhir, dan update penting lainnya akan diumumkan melalui Instagram resmi kami.
+                                        </p>
+                                        <a href="https://instagram.com/gunsakultra" target="_blank" class="btn" style="background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); color: white; padding: 12px 30px; font-weight: 700; border-radius: 30px;">
+                                            <i class="fab fa-instagram"></i> Follow @gunsakultra
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="trail-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-logo">
+                        <img src="https://drive.google.com/uc?export=view&id=1wnrNDMCebkz5nwaH5choZwbLctaxvNVh" alt="Logo" class="footer-logo-img">
+                        <h4>GUNSAK DU TRAIL ULTRA</h4>
+                        <p>Event Lari Trail Lombok</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Event</a></li>
+                        <li><a href="kategori.html">Kategori Lomba</a></li>
+                        <li><a href="jadwal.html">Jadwal & Lokasi</a></li>
+                        <li><a href="registrasi.html">Registrasi</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Kontak</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> gunsakdutrailultra@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> 085804231555</li>
+                        <li><i class="fab fa-instagram"></i> @gunsakultra</li>
+                    </ul>
+                    <div class="footer-hashtag">#GUNSAKDUTRAILULTRA</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GUNSAK DU TRAIL ULTRA. Hak Cipta Dilindungi. Diselenggarakan oleh Gunsak Academia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set event date: October 1, 2026
+            const eventDate = new Date('October 1, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<h3 style='color: var(--accent-light);'>Event telah dimulai!</h3>";
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = `
+                <div class="row justify-content-center">
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="countdown-box" style="background-color: rgba(139, 69, 19, 0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                            <div class="countdown-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-light);">${days}</div>
+                            <div class="countdown-label" style="color: white; font-size: 1rem; text-transform: uppercase;">Hari</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="countdown-box" style="background-color: rgba(139, 69, 19, 0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                            <div class="countdown-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-light);">${hours}</div>
+                            <div class="countdown-label" style="color: white; font-size: 1rem; text-transform: uppercase;">Jam</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="countdown-box" style="background-color: rgba(139, 69, 19, 0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                            <div class="countdown-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-light);">${minutes}</div>
+                            <div class="countdown-label" style="color: white; font-size: 1rem; text-transform: uppercase;">Menit</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="countdown-box" style="background-color: rgba(139, 69, 19, 0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                            <div class="countdown-number" style="font-size: 2.5rem; font-weight: 900; color: var(--accent-light);">${seconds}</div>
+                            <div class="countdown-label" style="color: white; font-size: 1rem; text-transform: uppercase;">Detik</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Initialize map
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the map
+            const map = L.map('map').setView([-8.7333, 116.2833], 11); // Approximate coordinates for Lombok
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            // Add a marker for Gunung Sasak (approximate location)
+            L.marker([-8.7333, 116.2833])
+                .addTo(map)
+                .bindPopup('<strong>Gunung Sasak Area</strong><br>Lokasi GUNSAK DU TRAIL ULTRA')
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
