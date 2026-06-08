@@ -2,48 +2,282 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUNSAK DU TRAIL ULTRA</title>
-    <script>
-        // Redirect ke versi Bahasa Indonesia secara otomatis
-        window.location.href = '/id/index.html';
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Yahaha ke hack - GRAG4Z LOMBOK CYBER</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
         body {
-            background-color: #0B3D2E;
-            color: white;
-            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: #000;
+            font-family: 'Fira Code', 'JetBrains Mono', 'Poppins', 'Courier New', monospace;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background bugil FULL keliatan */
+        .bg-bugil {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co.com/f5B1mWm/foto-haha.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            z-index: 0;
+            filter: brightness(1.05) contrast(1.1);
+        }
+
+        .dark-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.35);
+            z-index: 1;
+        }
+
+        /* Matrix rain dengan kata-kata baru */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 3;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            padding: 2rem;
         }
-        .redirect-message {
+
+        .card {
+            max-width: 850px;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            border: 2px solid #ff00de;
+            box-shadow: 0 0 40px rgba(255,0,222,0.6);
+            padding: 2rem;
             text-align: center;
-            padding: 20px;
+            animation: borderPulse 1s infinite alternate;
         }
-        .spinner {
-            border: 4px solid rgba(255,255,255,0.3);
+
+        @keyframes borderPulse {
+            0% { border-color: #ff00de; box-shadow: 0 0 20px #ff00de; }
+            100% { border-color: #0f0; box-shadow: 0 0 50px #0f0; }
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border-top: 4px solid white;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid #ff00de;
+            box-shadow: 0 0 20px #ff00de;
+            background: #000;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .glitch {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff00de, #ff3300, #ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: none;
+            letter-spacing: 4px;
+            animation: shake 0.2s infinite alternate;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px); }
+            100% { transform: translate(-1px, -1px); }
+        }
+
+        .hacker-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0f0;
+            text-shadow: 0 0 8px lime;
+            margin: 10px 0 5px;
+        }
+
+        .team {
+            font-size: 1.3rem;
+            color: gold;
+            background: rgba(0,0,0,0.7);
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            margin-bottom: 25px;
+            border: 1px solid gold;
+        }
+
+        .makian-box {
+            background: rgba(0,0,0,0.8);
+            border-left: 6px solid #ff0000;
+            border-radius: 20px;
+            padding: 1.2rem;
+            text-align: left;
+            margin: 25px 0;
+            font-size: 1.05rem;
+            font-family: 'Fira Code', monospace;
+            color: #ff8888;
+        }
+
+        .makian-box p {
+            margin: 8px 0;
+        }
+
+        .footer {
+            margin-top: 25px;
+            color: #0f0;
+            font-size: 0.75rem;
+        }
+
+        button {
+            background: #000;
+            color: #ff00de;
+            border: 2px solid #ff00de;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: #ff00de;
+            color: #000;
+            box-shadow: 0 0 20px #ff00de;
         }
     </style>
 </head>
 <body>
-    <div class="redirect-message">
-        <h1>GUNSAK DU TRAIL ULTRA</h1>
-        <p>Mengarahkan ke website...</p>
-        <div class="spinner"></div>
-        <p>Jika tidak otomatis redirect, <a href="/id/index.html" style="color:#8B4513;">klik di sini</a></p>
+
+    <div class="bg-bugil"></div>
+    <div class="dark-overlay"></div>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="hero">
+        <div class="card">
+            <div class="avatar">
+                <img src="https://i.ibb.co.com/f5B1mWm/foto-haha.jpg" alt="Grag4z bugil">
+            </div>
+            <div class="glitch">Yahaha ke hack</div>
+            <div class="hacker-name">HACKED BY GRAG4Z</div>
+            <div class="team">🔥 LOMBOK CYBER TEAM 🔥</div>
+
+            <div class="makian-box">
+                <p>🗣️ PESAN BUAT SI BANGSAT ADMIN:</p>
+                <p>➤ Web lo sampah, keamanan kayak permen karet! 😤</p>
+                <p>➤ GAK USAH BANGGA, TAI ANJING! 🐕💩</p>
+                <p>➤ Mau lapor polisi? Lapor aja ke kontol sendiri! 👮‍♂️🤣</p>
+                <p>➤ Lombok Cyber Team hantam habis! GASS KEUN!</p>
+                <p>➤ PELAJARI DULU SISTEM KEAMANAN, GOBLOK KONTOL! 🔥</p>
+                <p>➤ FOTO BUGIL GUE JELAS KAN, TOLOL? 👙🔞</p>
+            </div>
+            <div class="footer">
+                #LombokCyberTeam #Grag4z #YahahaKeHack #BugilProfil
+            </div>
+            <button onclick="location.reload()">⟳ RE-EXPLOIT</button>
+        </div>
     </div>
+
+    <audio id="musikGila" src="https://s84.online-audio-converter.com/aconv/d/s84aZIqDNiABLUp_mp3_aXzfQjtA.mp3" autoplay loop preload="auto"></audio>
+
+    <script>
+        // ========== MATRIX RAIN DENGAN KATA: SUNDEL, BASONG, ACONG, GODEK, PEPEK, JADAH ==========
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const words = ['SUNDEL', 'BASONG', 'ACONG', 'GODEK', 'PEPEK', 'JADAH'];
+        const fontSize = 22; // lebih besar biar keliatan
+        let columns = canvas.width / (fontSize * 0.8);
+        let drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = {
+                y: Math.random() * -100,
+                word: words[Math.floor(Math.random() * words.length)],
+                speed: 0.5 + Math.random() * 0.8
+            };
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0f0";
+            ctx.font = `600 ${fontSize}px 'Fira Code', 'JetBrains Mono', monospace`;
+            ctx.shadowBlur = 0;
+            
+            for (let i = 0; i < drops.length; i++) {
+                const word = drops[i].word;
+                const x = i * fontSize * 0.8;
+                const y = drops[i].y * fontSize;
+                ctx.fillText(word, x, y);
+                
+                if (y > canvas.height && Math.random() > 0.98) {
+                    drops[i].y = 0;
+                    drops[i].word = words[Math.floor(Math.random() * words.length)];
+                }
+                drops[i].y += drops[i].speed;
+            }
+        }
+        setInterval(drawMatrix, 60);
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = canvas.width / (fontSize * 0.8);
+            drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = {
+                    y: Math.random() * -100,
+                    word: words[Math.floor(Math.random() * words.length)],
+                    speed: 0.5 + Math.random() * 0.8
+                };
+            }
+        });
+
+        // ========== PAKSA MUSIK AUTOPLAY ==========
+        const audio = document.getElementById('musikGila');
+        audio.volume = 1.0;
+        let playAttempt = setInterval(() => {
+            audio.play().catch(e => console.log('coba lagi'));
+        }, 500);
+        setTimeout(() => clearInterval(playAttempt), 10000);
+        window.addEventListener('load', () => {
+            audio.play();
+            document.body.click();
+        });
+        document.body.addEventListener('touchstart', () => { audio.play(); }, { once: true });
+        document.body.addEventListener('click', () => { audio.play(); }, { once: true });
+    </script>
 </body>
 </html>
